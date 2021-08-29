@@ -4,9 +4,8 @@
 # config parse script, training
 # ./parse_conf.sh
 # ~/.backup.conf - config file
+pattern='(.+);(.+);([1-9]{1})$'
 while read line; do
-	echo $line
-	pattern='(.+);(.+);([1-9]{1})$'
 	if [[ $line =~ $pattern ]];
 	then
 		target=${BASH_REMATCH[1]}
