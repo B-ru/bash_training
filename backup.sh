@@ -24,7 +24,7 @@ else
 		target=$1
 		destination=$2
 	else
-		printf "unkown arguments signature: $# arguments\n==>\t\tcheck arguments\n"
+		printf "unknown arguments signature: $# arguments\n==>\t\tcheck arguments\n"
 		exit
 	fi
 fi	
