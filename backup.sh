@@ -28,7 +28,7 @@ else
 		exit
 	fi
 fi	
-if [ -s $target ];
+if [ -s "$target" ];
 then
 	printf "target\t\tok\n"
 	if [ -s $destination ];
@@ -36,11 +36,11 @@ then
 		printf "destination\tok\ncompression\t$compression\n"
 		aname=${target%/}-`date +%H%M%S%d%m%y`
 		printf "rolling tarball\t$aname.tar\n"
-		tar -cf $aname.tar $target &>/dev/null
+		tar -cf "$aname.tar" "$target"
 		printf  "gzipping\t--//--.gz\n"
-		gzip -$compression $aname.tar
+		gzip -$compression "$aname.tar"
 		printf "moving to\t$destination\n"
-		mv $aname.tar.gz $destination
+		mv "$aname.tar.gz" "$destination"
 	else
 		printf "destination\tno go\n==>\t\tcheck 2nd argument\n"
 	fi
